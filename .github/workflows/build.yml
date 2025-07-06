@@ -1,0 +1,28 @@
+name: NodeJS Build Preact
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Build Preact
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v1.2.1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            cd /home/jefrien/htdocs/jefrien.dev
+            git reset --hard HEAD
+            git pull origin main
+            cd assets/app
+            pnpm i
+            pnpm run build
+                
