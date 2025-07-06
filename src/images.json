@@ -28,5 +28,15 @@
     },
     "path": "/projects",
     "original": "projects/mi-dulce-tentacion-gt.avif"
+  },
+  "projects/karaoke": {
+    "320": {
+      "avif": "projects/karaoke-320.avif"
+    },
+    "768": {
+      "avif": "projects/karaoke-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/karaoke-original.avif"
   }
 }

@@ -15,6 +15,14 @@
         "url": "https://dulcetentaciongt.com/",
         "github": false,
         "technologies": ["Wordpress", "PHP", "MySQL", "Tailwind CSS", "WooCommerce"]
-      }
+      },
+      {
+        "title": "KaraOKE",
+        "description": "Built with Preact, it lets users search and play karaoke videos from YouTube. It leverages the Spotify API to fetch song data and playlists. Features include song history, pitch adjustment, and more.",
+        "image": "projects/karaoke",
+        "url": "https://karaoke.jefrien.dev/",
+        "github": false,
+        "technologies": ["Preact", "Spotify API", "YouTube API", "Tailwind CSS"]
+      }      
     ]
 }

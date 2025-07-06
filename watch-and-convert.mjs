@@ -12,14 +12,12 @@ const __dirname = path.dirname(__filename);
 const inputDir = path.join(__dirname, 'public', 'src-images');
 const outputDir = path.join(__dirname, 'public', 'images');
 const manifestPath = path.join(__dirname, 'src', 'images.json');
-const sizes = [320, 768];  // Solo 320 y 768
+const sizes = [320, 768];
 const format = 'avif';
 
-// Opciones para AVIF (calidad alta y buena compresión)
 const avifOptions = {
-  quality: 75,
+  quality: 80,
   effort: 5,
-  chromaSubsampling: '4:4:4',
   lossless: false,
 };
 
@@ -40,13 +38,18 @@ async function saveManifest() {
 }
 
 async function generatedFilesExist(generatedPaths) {
+  const originalPath = generatedPaths?.original;
+  if (!originalPath || !fssync.existsSync(path.join(outputDir, originalPath))) {
+    return false;
+  }
+
   for (const size of sizes) {
     const filepath = generatedPaths?.[size]?.[format];
-    if (!filepath) return false;
-    if (!fssync.existsSync(path.join(outputDir, filepath))) {
+    if (!filepath || !fssync.existsSync(path.join(outputDir, filepath))) {
       return false;
     }
   }
+
   return true;
 }
 
@@ -55,28 +58,34 @@ async function processImage(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   const baseName = path.basename(filePath, ext);
   const folderPath = path.dirname(relativePath);
-  const fileName = path.basename(filePath);
   const outputFolder = path.join(outputDir, folderPath);
   const manifestKey = path.join(folderPath, baseName).replaceAll('\\', '/');
 
+  const normalizedFolderPath = (folderPath === '.' || folderPath === '') ? '' : folderPath.replaceAll('\\', '/');
+  const manifestPathValue = normalizedFolderPath === '' ? '/' : '/' + normalizedFolderPath;
+
   const image = sharp(filePath);
   await fs.mkdir(outputFolder, { recursive: true });
-
-  const originalOutputPath = path.join(outputFolder, fileName);
-  const originalManifestPath = path.join(folderPath, fileName).replaceAll('\\', '/');
-
-  if (!fssync.existsSync(originalOutputPath)) {
-    await fs.copyFile(filePath, originalOutputPath);
-    console.log(`📄 Copiado original: ${originalManifestPath}`);
-  }
 
   if (manifest[manifestKey] && await generatedFilesExist(manifest[manifestKey])) {
     console.log(`⚠️  Saltado (ya existe): ${manifestKey}`);
     return;
   }
 
-  console.log(`ℹ️ Generando tamaños: ${sizes.join(', ')}`);
+  // ✅ Generar versión original AVIF (sin resize)
+  const fullOutputFileName = `${baseName}-original.avif`;
+  const fullOutputPath = path.join(outputFolder, fullOutputFileName);
+  const fullRelPath = path.join(folderPath, fullOutputFileName).replaceAll('\\', '/');
 
+  if (!fssync.existsSync(fullOutputPath)) {
+    await image
+      .withMetadata(false)
+      .toFormat(format, avifOptions)
+      .toFile(fullOutputPath);
+    console.log(`✅ Generado original AVIF: ${fullRelPath}`);
+  }
+
+  // ✅ Generar versiones redimensionadas
   const avifPaths = {};
   for (const size of sizes) {
     const outputFileName = `${baseName}-${size}.avif`;
@@ -85,21 +94,20 @@ async function processImage(filePath) {
 
     if (!fssync.existsSync(outputPath)) {
       await image
-        .resize({ width: size })        
+        .resize({ width: size })
+        .withMetadata(false)
         .toFormat(format, avifOptions)
         .toFile(outputPath);
-      console.log(`✅ Generado (resize): ${relPath}`);
+      console.log(`✅ Generado ${size}px: ${relPath}`);
     }
 
     avifPaths[size] = { [format]: relPath };
   }
 
-  const normalizedFolderPath = (folderPath === '.' || folderPath === '') ? '' : folderPath.replaceAll('\\', '/');
-  const manifestPathValue = normalizedFolderPath === '' ? '/' : '/' + normalizedFolderPath;
-
+  // ✅ Guardar en manifest
   manifest[manifestKey] = {
     path: manifestPathValue,
-    original: originalManifestPath,
+    original: fullRelPath,
     ...avifPaths,
   };
 
@@ -109,11 +117,15 @@ async function processImage(filePath) {
 async function cleanupDeletedInputs() {
   const keys = Object.keys(manifest);
   for (const key of keys) {
-    const relativePath = path.join(manifest[key].path, path.basename(manifest[key].original));
-    const fullInputPath = path.join(inputDir, relativePath);
-    if (!fssync.existsSync(fullInputPath)) {
-      console.log(`🗑️  Eliminado: ${relativePath}`);
+    const inputRelative = path.join(manifest[key].path === '/' ? '' : manifest[key].path.slice(1), `${path.basename(key)}.*`);
+    const inputGlob = path.join(inputDir, inputRelative);
+    const found = fssync.readdirSync(path.dirname(inputGlob))
+      .some(name => name.startsWith(path.basename(key)));
 
+    if (!found) {
+      console.log(`🗑️  Eliminado: ${key}`);
+
+      // Borrar AVIFs generados
       for (const size of sizes) {
         const avifPath = manifest[key]?.[size]?.[format];
         if (avifPath) {
@@ -124,6 +136,7 @@ async function cleanupDeletedInputs() {
         }
       }
 
+      // Borrar original AVIF
       const originalOutput = path.join(outputDir, manifest[key].original);
       if (fssync.existsSync(originalOutput)) {
         await fs.unlink(originalOutput);
