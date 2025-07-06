@@ -5,7 +5,7 @@ export const ProjectsSection = () => {
     const { t } = useTranslation();
     const projects = t('projects', { returnObjects: true });
     return (
-        <section className=" py-32 bg-neutral-100 dark:bg-neutral-500/5">
+        <section className=" py-32">
             <div className="container mx-auto px-4 xl:px-8">
                 <h2 className="text-4xl text-center font-semibold mb-6 mt-4 xl:mt-2">{t("Projects")}</h2>
 
@@ -21,15 +21,15 @@ export const ProjectsSection = () => {
                                         alt={project.title}
                                         width={800}
                                         height={600}
-                                        className="rounded-lg w-full h-full object-cover object-top-left group-hover:scale-105 transition-all duration-300 "
+                                        className="rounded-lg w-full h-full object-cover object-top  group-hover:scale-105 transition-transform duration-300"
                                         forceSize={768}
                                     />
-                                    <div className="absolute top-0 left-0 w-full h-full p-4 flex items-end justify-start bg-gradient-to-b from-transparent via-transparent to-background">
-                                        <span className="text-primary text-sm font-semibold">{project.technologies.join(', ')}</span>
+                                    <div className="absolute top-0 left-0 w-full h-full p-4 flex items-end justify-start bg-gradient-to-b from-transparent via-transparent to-black dark:to-background">
+                                        <span className="text-emerald-300 dark:text-primary text-sm font-semibold">{project.technologies.join(', ')}</span>
                                     </div>
                                 </div>
                                 <div className="p-2 bg-background">
-                                    <div className="flex flex-col items-start justify-center ">
+                                    <div className="flex flex-col items-start justify-center mb-1">
                                         <h3 className="text-xl font-semibold">{project.title}</h3>
                                     </div>
                                     <p className="text-sm text-neutral-500 dark:text-neutral-400 line-clamp-4">{project.description}</p>
