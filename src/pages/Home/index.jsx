@@ -1,21 +1,23 @@
 import { Button } from "@/components/ui/button";
-import { useAutoTranslate } from "react-autolocalise";
+import { useTranslation } from "react-i18next";
 import { DownloadIcon } from "lucide-react";
-import TypeWriterHome from "@/components/pages/home/TypeWriterHome";
-import { Social } from "@/components/pages/home/Social";
-import { Photo } from "@/components/pages/home/Photo";
+import TypeWriterHome from "@/components/sections/header/TypeWriterHome";
+import { Social } from "@/components/sections/header/Social";
+import { Photo } from "@/components/sections/header/Photo";
+import { Stats } from "@/components/sections/header/Stats";
+import { ProjectsSection } from "@/components/sections/projects";
 
 export function Home() {
-	const { t } = useAutoTranslate();
+	const { t } = useTranslation();
 	return (
 		<div class="home h-full">
-			<div className="container mx-auto px-4 xl:px-8 h-full">
+			<section className="container mx-auto px-4 xl:px-8 h-full">
 				<div className="flex flex-col xl:flex-row items-center justify-between pt-8 xl:pt-16 xl:pb-24">
 					<div className='text-center xl:text-left order-2 xl:order-none'>
 						<span className='text-xl min-h-[28px] block '>
 							<TypeWriterHome />
 						</span>
-						<h1 className='text-5xl lg:text-6xl xl:text-7xl leading-[1.1] font-semibold mb-6 mt-2'>{t("Hello I'm")}
+						<h1 className='text-4xl md:text-5xl xl:text-6xl 3xl:text-7xl leading-[1.1] font-semibold mb-6 mt-4 xl:mt-2'>{t("Hello I'm")}
 							<br /> <span className="text-primary">Jefrien Alvizures</span>
 						</h1>
 						<p className='max-w-[500px] mb-9 text-black/80 dark:text-white/80'>
@@ -38,9 +40,14 @@ export function Home() {
 					<div className='order-1 xl:order-none mb-8 xl:mb-0'>
 						<Photo />
 					</div>
+
 				</div>
 
-			</div>
+				<Stats />
+
+			</section>
+
+			<ProjectsSection />
 		</div>
 	);
 }

@@ -16,7 +16,7 @@ export const Photo = () => {
                 <img
                     alt="Foto de Jefrien Alvizures"
                     className="w-full h-full object-contain"
-                    src="/photo.avif" />
+                    src="/images/photo.avif" />
             </motion.div>
 
             <motion.svg 

@@ -1,0 +1,32 @@
+{
+  "photo": {
+    "320": {
+      "avif": "photo-320.avif"
+    },
+    "768": {
+      "avif": "photo-768.avif"
+    },
+    "path": "/",
+    "original": "photo.avif"
+  },
+  "projects/wasapi": {
+    "320": {
+      "avif": "projects/wasapi-320.avif"
+    },
+    "768": {
+      "avif": "projects/wasapi-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/wasapi.avif"
+  },
+  "projects/mi-dulce-tentacion-gt": {
+    "320": {
+      "avif": "projects/mi-dulce-tentacion-gt-320.avif"
+    },
+    "768": {
+      "avif": "projects/mi-dulce-tentacion-gt-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/mi-dulce-tentacion-gt.avif"
+  }
+}

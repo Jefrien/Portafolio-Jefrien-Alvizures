@@ -1,36 +1,47 @@
 import { LocationProvider, Router, Route, hydrate, prerender as ssr } from 'preact-iso';
-import { TranslationProvider } from "react-autolocalise";
-
-
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 import { Header } from './components/Header.jsx';
 import { Home } from './pages/Home/index.jsx';
 import { NotFound } from './pages/_404.jsx';
 import PageTransition from './components/PageTransition.jsx';
 import './style.css';
 import { ThemeProvider } from './theme-provider.jsx';
+import en from './locale/en.js';
+import es from './locale/es.js';
+
+
+i18n
+	.use(initReactI18next)
+	.init({
+		resources: { en, es },
+		lng: 'en',
+		fallbackLng: "en",
+		interpolation: {
+			escapeValue: false
+		}
+	});
+
+if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+	i18n.changeLanguage(localStorage.getItem('lang') || 'en');
+}
 
 export function App() {
+
+
 	return (
 		<LocationProvider>
-			<TranslationProvider
-				config={{
-					apiKey: "at_client_z2ajdV5MfhXy",
-					sourceLocale: "en",
-					targetLocale: "es",
-				}}
-			>
-				<ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
-					<Header />
-					<main>
-						<PageTransition>
-							<Router>
-								<Route path="/" component={Home} />
-								<Route default component={NotFound} />
-							</Router>
-						</PageTransition>
-					</main>
-				</ThemeProvider>
-			</TranslationProvider>
+			<ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+				<Header />
+				<main>
+					<PageTransition>
+						<Router>
+							<Route path="/" component={Home} />
+							<Route default component={NotFound} />
+						</Router>
+					</PageTransition>
+				</main>
+			</ThemeProvider>
 		</LocationProvider>
 	);
 }

@@ -1,9 +1,10 @@
 import { useLocation } from 'preact-iso';
-import { useAutoTranslate } from "react-autolocalise";
 import { twMerge } from 'tailwind-merge';
-import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import { SunIcon, MoonIcon } from 'lucide-react';
 import { useTheme } from '@/theme-provider';
+import { LangSwitcher } from './LangSwitcher';
+import { Button } from '../ui/button';
 
 const menuLinks = [
     { href: '/', label: 'Home' },
@@ -14,7 +15,7 @@ const menuLinks = [
 
 export const MainDesktop = () => {
     const { url } = useLocation();
-    const { t } = useAutoTranslate();
+    const { t } = useTranslation();
 
     const { theme, setTheme } = useTheme();
 
@@ -28,16 +29,23 @@ export const MainDesktop = () => {
                     {t(link.label)}
                 </a>
             ))}
-            <button                                
-                className="size-8 hover:bg-primary/10 flex items-center justify-center cursor-pointer rounded-full w-12 h-12 ml-4"
-                onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-            >
-                {theme === 'light' ? (
-                    <MoonIcon className="size-6" />
-                ) : (
-                    <SunIcon className="size-6" />
-                )}
-            </button>
+
+            <Button variant="default" size="lg" className='cursor-pointer' >{t('Hire me')}</Button>
+
+            <div className="flex gap-4 items-center ml-4">
+                <LangSwitcher />
+
+                <button
+                    className="size-8 hover:bg-primary/10 flex items-center justify-center cursor-pointer rounded-full w-12 h-12"
+                    onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                >
+                    {theme === 'light' ? (
+                        <MoonIcon className="size-6" />
+                    ) : (
+                        <SunIcon className="size-6" />
+                    )}
+                </button>
+            </div>
         </nav>
     )
 }

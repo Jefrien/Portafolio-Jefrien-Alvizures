@@ -1,0 +1,20 @@
+{
+    "projects": [
+      {
+        "title": "Wasapi",
+        "description": "Sistema para la gestión de múltiples instancias de WhatsApp Business, con integración de webhooks y una REST API robusta. Desarrollado con Next.js y Supabase. Ideal para automatización y atención al cliente.",
+        "image": "projects/wasapi",
+        "url": "https://wasapi.cloud/",
+        "github": false,
+        "technologies": ["Next.js", "Supabase", "TypeScript", "Tailwind CSS", "Material Tailwind", "React"]
+      },
+      {
+        "title": "Mi Dulce Tentación GT",
+        "description": "Sitio web para una pastelería desarrollado con WordPress y WooCommerce, con sistema de pagos contra entrega. Incluye un tema personalizado construido con Tailwind CSS y funciona como REST API para una app Android de gestión y control.",
+        "image": "projects/mi-dulce-tentacion-gt",
+        "url": "https://dulcetentaciongt.com/",
+        "github": false,
+        "technologies": ["Wordpress", "PHP", "MySQL", "Tailwind CSS", "WooCommerce"]
+      }
+    ]
+}
