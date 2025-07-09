@@ -58,5 +58,15 @@
     },
     "path": "/projects",
     "original": "projects/budget_gen-original.avif"
+  },
+  "projects/sheinapp": {
+    "320": {
+      "avif": "projects/sheinapp-320.avif"
+    },
+    "768": {
+      "avif": "projects/sheinapp-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/sheinapp-original.avif"
   }
 }

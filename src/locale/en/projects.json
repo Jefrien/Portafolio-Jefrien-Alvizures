@@ -39,6 +39,14 @@
         "url": "https://budgetgen.jefrien.dev/",
         "github": false,
         "technologies": ["Laravel", "Tailwind CSS", "React", "MySQL", "PHP", "TypeScript"]
+      },
+      {
+        "title": "Shein App",
+        "description": "Online store inspired by Shein, built with Vue 3 and Nuxt.js. Uses MongoDB as the primary database. Designed for selling imported clothing in Guatemala, it features a product catalog, shopping cart, product management, and a custom admin panel.",
+        "image": "projects/sheinapp",
+        "url": "https://shein.jefrien.dev/",
+        "github": false,
+        "technologies": ["Vue 3", "Nuxt.js", "MongoDB", "Vuetify", "TypeScript"]
       }
     ]
 }
