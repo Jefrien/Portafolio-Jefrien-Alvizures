@@ -23,6 +23,22 @@
         "url": "https://karaoke.jefrien.dev/",
         "github": false,
         "technologies": ["Preact", "Spotify API", "YouTube API", "Tailwind CSS"]
-      } 
+      },
+      {
+        "title": "Remote Development - FTP, SFTP, SSH Manager",
+        "description": "Extensión para Visual Studio Code que permite la conexión remota a servidores mediante FTP, SFTP o SSH. Facilita la edición directa de archivos remotos, manteniendo tu entorno de desarrollo limpio, eficiente y sincronizado.",
+        "image": "projects/remote_dev",
+        "url": "https://marketplace.visualstudio.com/items?itemName=jdevs.remote-development-ts",
+        "github": false,
+        "technologies": ["Visual Studio Code", "Node.js", "TypeScript", "FTP", "SFTP", "SSH"]
+      },
+      {
+        "title": "Generador de Presupuesto",
+        "description": "Generador de presupuestos con funcionalidades completas: gestión de inventario, clientes, y generación de PDF personalizable con logo. Incluye sistema de usuarios con roles, opción para deshabilitar el acceso a usuarios no administradores, y soporte para variables dinámicas en toda la interfaz.",
+        "image": "projects/budget_gen",
+        "url": "https://budgetgen.jefrien.dev/",
+        "github": false,
+        "technologies": ["Laravel", "Tailwind CSS", "React", "MySQL", "PHP", "TypeScript"]
+      }
     ]
 }

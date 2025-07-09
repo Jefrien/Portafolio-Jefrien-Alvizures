@@ -53,7 +53,7 @@ export const MainMobile = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
-                        className='fixed top-0 left-0 right-0 bottom-0 bg-black/50 z-50 flex items-center justify-end p-6'
+                        className='fixed top-0 left-0 w-full h-screen bg-black/50 z-50 flex items-center justify-end'
                         onClick={() => setIsOpen(false)}
                     >
                         <motion.div
@@ -62,7 +62,7 @@ export const MainMobile = () => {
                             animate={{ x: 0 }}
                             transition={{ duration: 0.3, delay: 0.2 }}
                             exit={{ x: 999 }}
-                            className='bg-neutral-100 dark:bg-neutral-900 p-6 rounded-2xl flex flex-col gap-4 w-[95%] sm:w-[80%] md:w-[50%] h-[95vh] border border-primary/20'
+                            className='bg-neutral-100 dark:bg-neutral-900 p-6 flex flex-col gap-4 w-[95%] sm:w-[80%] md:w-[50%] h-screen '
                             onClick={(e) => e.stopPropagation()}
                         >
                             <a href="/">

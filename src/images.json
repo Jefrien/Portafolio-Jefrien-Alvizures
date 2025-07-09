@@ -38,5 +38,25 @@
     },
     "path": "/projects",
     "original": "projects/karaoke-original.avif"
+  },
+  "projects/remote_dev": {
+    "320": {
+      "avif": "projects/remote_dev-320.avif"
+    },
+    "768": {
+      "avif": "projects/remote_dev-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/remote_dev-original.avif"
+  },
+  "projects/budget_gen": {
+    "320": {
+      "avif": "projects/budget_gen-320.avif"
+    },
+    "768": {
+      "avif": "projects/budget_gen-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/budget_gen-original.avif"
   }
 }
