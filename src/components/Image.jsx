@@ -17,8 +17,7 @@ export default function Image({ src, alt, width, height, className, forceSize = 
         .filter(([key]) => !isNaN(parseInt(key)))
         .map(([size, data]) => `images/${data.avif} ${parseInt(size)}w`)
         .join(', ');
-
-    console.log('forced', image[forceSize])
+    
     const sizeForceSrc = forceSize ? 'images/' + image[forceSize].avif : 'images/' + original;
 
     return (

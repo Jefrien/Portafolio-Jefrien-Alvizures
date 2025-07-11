@@ -8,7 +8,7 @@ const socials = [
     },
     {
         icon: <FaLinkedin />,
-        link: "https://linkedin.com/in/jefrien"
+        link: "https://www.linkedin.com/in/jefrien-alvizures/"
     }
 ]
 

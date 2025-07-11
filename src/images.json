@@ -68,5 +68,45 @@
     },
     "path": "/projects",
     "original": "projects/sheinapp-original.avif"
+  },
+  "projects/citasapp": {
+    "320": {
+      "avif": "projects/citasapp-320.avif"
+    },
+    "768": {
+      "avif": "projects/citasapp-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/citasapp-original.avif"
+  },
+  "projects/misgastos": {
+    "320": {
+      "avif": "projects/misgastos-320.avif"
+    },
+    "768": {
+      "avif": "projects/misgastos-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/misgastos-original.avif"
+  },
+  "projects/milocal": {
+    "320": {
+      "avif": "projects/milocal-320.avif"
+    },
+    "768": {
+      "avif": "projects/milocal-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/milocal-original.avif"
+  },
+  "projects/infinity-space": {
+    "320": {
+      "avif": "projects/infinity-space-320.avif"
+    },
+    "768": {
+      "avif": "projects/infinity-space-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/infinity-space-original.avif"
   }
 }

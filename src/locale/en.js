@@ -17,5 +17,7 @@ export default {
 
         // collections
         'projects': projects,
+        'more_details': 'Details',
+        'view_project': 'View project',
     }
 }

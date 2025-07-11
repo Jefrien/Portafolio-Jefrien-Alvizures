@@ -1,52 +1,143 @@
 {
-    "projects": [
-      {
-        "title": "Wasapi",
-        "description": "System for managing multiple WhatsApp Business instances, featuring webhook integration and a robust REST API. Built with Next.js and Supabase. Ideal for automation and customer support.",
-        "image": "projects/wasapi",
-        "url": "https://wasapi.cloud/",
-        "github": false,
-        "technologies": ["Next.js", "Supabase", "TypeScript", "Tailwind CSS", "Material Tailwind", "React"]
-      },
-      {
-        "title": "Mi Dulce Tentación GT",
-        "description": "Bakery website built with WordPress and WooCommerce, featuring cash-on-delivery payments. Includes a custom theme styled with Tailwind CSS and serves as a REST API for an Android management app.",
-        "image": "projects/mi-dulce-tentacion-gt",
-        "url": "https://dulcetentaciongt.com/",
-        "github": false,
-        "technologies": ["Wordpress", "PHP", "MySQL", "Tailwind CSS", "WooCommerce"]
-      },
-      {
-        "title": "KaraOKE",
-        "description": "Built with Preact, it lets users search and play karaoke videos from YouTube. It leverages the Spotify API to fetch song data and playlists. Features include song history, pitch adjustment, and more.",
-        "image": "projects/karaoke",
-        "url": "https://karaoke.jefrien.dev/",
-        "github": false,
-        "technologies": ["Preact", "Spotify API", "YouTube API", "Tailwind CSS"]
-      },
-      {
-        "title": "Remote Development - FTP, SFTP, SSH Manager",
-        "description": "Visual Studio Code extension that enables remote connections to servers via FTP, SFTP, or SSH. Allows direct editing of remote files while keeping your development environment clean, efficient, and in sync.",
-        "image": "projects/remote_dev",
-        "url": "https://marketplace.visualstudio.com/items?itemName=jdevs.remote-development-ts",
-        "github": false,
-        "technologies": ["Visual Studio Code", "Node.js", "TypeScript", "FTP", "SFTP", "SSH"]
-      },
-      {
-        "title": "Budget Generator",
-        "description": "Comprehensive budget generator featuring inventory and client management, customizable PDF generation with logo, and a role-based user system. Includes the ability to disable access for non-admin users and supports dynamic text variables throughout the UI.",
-        "image": "projects/budget_gen",
-        "url": "https://budgetgen.jefrien.dev/",
-        "github": false,
-        "technologies": ["Laravel", "Tailwind CSS", "React", "MySQL", "PHP", "TypeScript"]
-      },
-      {
-        "title": "Shein App",
-        "description": "Online store inspired by Shein, built with Vue 3 and Nuxt.js. Uses MongoDB as the primary database. Designed for selling imported clothing in Guatemala, it features a product catalog, shopping cart, product management, and a custom admin panel.",
-        "image": "projects/sheinapp",
-        "url": "https://shein.jefrien.dev/",
-        "github": false,
-        "technologies": ["Vue 3", "Nuxt.js", "MongoDB", "Vuetify", "TypeScript"]
-      }
-    ]
+  "projects": [
+    {
+      "slug": "wasapi",
+      "title": "Wasapi",
+      "description": "System for managing multiple WhatsApp Business instances, featuring webhook integration and a robust REST API. Built with Next.js and Supabase. Ideal for automation and customer support.",
+      "image": "projects/wasapi",
+      "url": "https://wasapi.cloud/",
+      "github": false,
+      "technologies": [
+        "Next.js",
+        "Supabase",
+        "TypeScript",
+        "Tailwind CSS",
+        "Material Tailwind",
+        "React"
+      ]
+    },
+    {
+      "slug": "mi-dulce-tentacion-gt",
+      "title": "Mi Dulce Tentación GT",
+      "description": "Bakery website built with WordPress and WooCommerce, featuring cash-on-delivery payments. Includes a custom theme styled with Tailwind CSS and serves as a REST API for an Android management app.",
+      "image": "projects/mi-dulce-tentacion-gt",
+      "url": "https://dulcetentaciongt.com/",
+      "github": false,
+      "technologies": [
+        "Wordpress",
+        "PHP",
+        "MySQL",
+        "Tailwind CSS",
+        "WooCommerce"
+      ]
+    },
+    {
+      "slug": "karaoke",
+      "title": "KaraOKE",
+      "description": "Built with Preact, it lets users search and play karaoke videos from YouTube. It leverages the Spotify API to fetch song data and playlists. Features include song history, pitch adjustment, and more.",
+      "image": "projects/karaoke",
+      "url": "https://karaoke.jefrien.dev/",
+      "github": false,
+      "technologies": ["Preact", "Spotify API", "YouTube API", "Tailwind CSS"]
+    },
+    {
+      "slug": "remote-dev",
+      "title": "Remote Development - FTP, SFTP, SSH Manager",
+      "description": "Visual Studio Code extension that enables remote connections to servers via FTP, SFTP, or SSH. Allows direct editing of remote files while keeping your development environment clean, efficient, and in sync.",
+      "image": "projects/remote_dev",
+      "url": "https://marketplace.visualstudio.com/items?itemName=jdevs.remote-development-ts",
+      "github": false,
+      "technologies": [
+        "Visual Studio Code",
+        "Node.js",
+        "TypeScript",
+        "FTP",
+        "SFTP",
+        "SSH"
+      ]
+    },
+    {
+      "slug": "budget-gen",
+      "title": "Budget Generator",
+      "description": "Comprehensive budget generator featuring inventory and client management, customizable PDF generation with logo, and a role-based user system. Includes the ability to disable access for non-admin users and supports dynamic text variables throughout the UI.",
+      "image": "projects/budget_gen",
+      "url": "https://budgetgen.jefrien.dev/",
+      "github": false,
+      "technologies": [
+        "Laravel",
+        "Tailwind CSS",
+        "React",
+        "MySQL",
+        "PHP",
+        "TypeScript"
+      ]
+    },
+    {
+      "slug": "shein-app",
+      "title": "Shein App",
+      "description": "Online store inspired by Shein, built with Vue 3 and Nuxt.js. Uses MongoDB as the primary database. Designed for selling imported clothing in Guatemala, it features a product catalog, shopping cart, product management, and a custom admin panel.",
+      "image": "projects/sheinapp",
+      "url": "https://shein.jefrien.dev/",
+      "github": false,
+      "technologies": ["Vue 3", "Nuxt.js", "MongoDB", "Vuetify", "TypeScript"]
+    },
+    {
+      "slug": "citas-app",
+      "title": "Appointment System",
+      "description": "Appointment management application built with Vue 3, Vuetify, Laravel, Inertia, and MySQL. Users can select a branch, service, staff member, date, and time to schedule appointments. Time slots are fully customizable per branch or employee. Includes employee day-off management, notification system, and a complete admin backend for full control.",
+      "image": "projects/citasapp",
+      "url": "https://citasapp.jefrien.dev/",
+      "github": false,
+      "technologies": [
+        "Vue 3",
+        "Vuetify",
+        "Laravel",
+        "Inertia",
+        "MySQL",
+        "PHP",
+        "TypeScript"
+      ]
+    },
+    {
+      "slug": "mis-gastos",
+      "title": "My Expenses",
+      "description": "Hybrid app for managing personal expenses, built with Nuxt and Vue 3. Uses Tailwind CSS for UI, Firebase as backend and database, and Google authentication. Mobile-ready via CapacitorJS, delivering a native-like experience on devices.",
+      "image": "projects/misgastos",
+      "url": "https://misgastos.jefrien.dev/",
+      "github": false,
+      "technologies": [
+        "Nuxt.js",
+        "Vue 3",
+        "Tailwind CSS",
+        "Firebase",
+        "Google Auth",
+        "CapacitorJS"
+      ]
+    },
+    {
+      "slug": "milocal-gt",
+      "title": "Mi Local GT",
+      "description": "Uber-style app designed to connect local businesses with nearby customers. Built with Vue 3, Nuxt.js, and Vuetify. Uses Firebase for backend, authentication, and real-time database. Ideal for small businesses looking to digitalize their delivery or service systems.",
+      "image": "projects/milocal",
+      "url": "https://milocal.jefrien.dev/tienda",
+      "github": false,
+      "technologies": [
+        "Vue 3",
+        "Nuxt.js",
+        "Vuetify",
+        "Firebase",
+        "Google Auth",
+        "Real-time DB"
+      ]
+    },
+    {
+      "slug": "infinity-space",
+      "title": "Infinity Space",
+      "description": "Infinity Space is a 2D pixel art space shooter game built with Godot Engine. Compatible with both PC and touch-enabled mobile devices. Published on Itch.io, it delivers a classic arcade experience with smooth and responsive gameplay.",
+      "image": "projects/infinity-space",
+      "url": "https://jefrien.itch.io/infinity-space",
+      "github": false,
+      "technologies": ["Godot Engine", "Pixel Art", "HTML5 Export", "Touch Controls", "Itch.io"]
+    }
+  ]
 }
