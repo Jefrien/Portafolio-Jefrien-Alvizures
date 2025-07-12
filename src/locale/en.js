@@ -41,5 +41,6 @@ export default {
         'Message is required': 'Message is required',
         // contact
         'about_me': 'I’m a passionate and self-taught developer with a strong curiosity for emerging technologies. I constantly seek to improve my skills and embrace tools that enhance the quality and efficiency of my work. Open to challenges, I enjoy building modern, functional, and scalable solutions.',
+        'Message sent successfully': 'Message sent successfully',
     }
 }

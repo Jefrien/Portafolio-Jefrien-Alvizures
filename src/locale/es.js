@@ -40,5 +40,6 @@ export default {
         'Message is required': 'El mensaje es requerido',
         // contact
         'about_me': 'Soy un desarrollador apasionado y autodidacta, con gran curiosidad por las tecnologías emergentes. Siempre busco mejorar mis habilidades y adoptar herramientas que optimicen la calidad y eficiencia de mi trabajo. Abierto a nuevos retos, disfruto creando soluciones modernas, funcionales y escalables.',
+        'Message sent successfully': 'Mensaje enviado correctamente',
     }
 }   

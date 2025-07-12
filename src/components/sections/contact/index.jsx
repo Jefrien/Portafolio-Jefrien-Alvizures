@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { ContactForm } from './form'
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
 export const ContactSection = () => {
     const { t } = useTranslation();
@@ -13,7 +13,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="py-32 bg-neutral-800 dark:bg-accent">
+            className="py-20 lg:py-32 bg-neutral-800 dark:bg-accent">
             <div className="container mx-auto px-4 xl:px-8">
                 <motion.h2
                     initial={{ y: -20 }}
@@ -31,18 +31,22 @@ export const ContactSection = () => {
                             {t("about_me")}
                         </p>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <a href="https://github.com/jefrien-dev" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <a href="https://github.com/jefrien" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4 active:bg-primary">
                                 <FaGithub size={32} />
                                 <span>GitHub</span>
                             </a>
-                            <a href="https://linkedin.com/in/jefrien-dev" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4">
+                            <a href="https://www.linkedin.com/in/jefrien-alvizures/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4 active:bg-primary">
                                 <FaLinkedin size={32} />
                                 <span>LinkedIn</span>
                             </a>
-                            <a href="https://wa.me/5213312255585" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4">
+                            <a href="https://wa.me/50259219162" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4 active:bg-primary">
                                 <FaWhatsapp size={32} />
                                 <span>Whatsapp</span>
+                            </a>
+                            <a href="tel:+50259219162" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 bg-transparent rounded hover:bg-primary transition-colors text-white dark:hover:text-black p-4 active:bg-primary">
+                                <FaPhone size={32} />
+                                <span>Call me</span>
                             </a>
                         </div>
                     </div>

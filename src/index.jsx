@@ -9,6 +9,7 @@ import './style.css';
 import { ThemeProvider } from './theme-provider.jsx';
 import en from './locale/en.js';
 import es from './locale/es.js';
+import { Toaster } from 'sonner';
 
 
 i18n
@@ -40,6 +41,7 @@ export function App() {
 							<Route default component={NotFound} />
 						</Router>
 					</PageTransition>
+					<Toaster />
 				</main>
 			</ThemeProvider>
 		</LocationProvider>

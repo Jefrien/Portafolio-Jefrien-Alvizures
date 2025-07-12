@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
 import { useTranslation } from "react-i18next"
-
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
   Form,
-  FormControl,
-  FormDescription,
+  FormControl,  
   FormField,
   FormItem,
   FormLabel,
@@ -16,6 +15,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Loader2 } from "lucide-react"
 
 
 const FormSchema = z.object({
@@ -31,7 +31,7 @@ const FormSchema = z.object({
 export function ContactForm() {
 
   const { t } = useTranslation();
-
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -41,19 +41,31 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(data) {
-    toast("You submitted the following values", {
-      description: (
-        <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
+  async function onSubmit(data) {
+    setIsLoading(true);
+    await fetch('https://n8n.jefrien.dev/webhook/contact-me', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     })
+    setIsLoading(false);
+    toast(t("Message sent successfully"))
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6 mx-auto">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="md:w-2/3 space-y-6 mx-auto relative overflow-hidden p-2">
+
+        {isLoading && (
+          <div className="absolute top-0 left-0 w-full h-full bg-background/80 z-10">
+            <div className="flex items-center justify-center h-full">
+              <Loader2 size={32} className="animate-spin" />
+            </div>
+          </div>
+        )}
+
         <FormField
           control={form.control}
           name="name"
@@ -98,9 +110,10 @@ export function ContactForm() {
 
 
         <div className="text-center">
-          <Button type="submit">{t("Send")}</Button>
+          <Button type="submit" disabled={isLoading}>{t("Send")}</Button>
         </div>
       </form>
+      
     </Form>
   )
 }
