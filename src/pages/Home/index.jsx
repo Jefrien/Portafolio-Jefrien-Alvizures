@@ -27,10 +27,12 @@ export function Home() {
 						</p>
 
 						<div className="flex flex-col xl:flex-row gap-8 items-center">
-							<Button variant="outline" size="xl" color="primary" className="uppercase flex items-center gap-2 border-primary rounded-4xl hover:!bg-primary hover:!text-primary-foreground cursor-pointer">
-								<span>{t("Download CV")}</span>
-								<DownloadIcon size={20} />
-							</Button>
+							<a href="/files/Jefrien Alvizures - esp.pdf" target="_blank" rel="noopener noreferrer" download>
+								<Button variant="outline" size="xl" color="primary" className="uppercase flex items-center gap-2 border-primary rounded-4xl hover:!bg-primary hover:!text-primary-foreground cursor-pointer">
+									<span>{t("Download CV")}</span>
+									<DownloadIcon size={20} />
+								</Button>
+							</a>
 							<div className="mb-8 xl:mb-0">
 								<Social containerStyles="flex gap-4" iconStyles="w-12 h-12 text-2xl border border-primary rounded-full flex items-center justify-center cursor-pointer text-primary hover:bg-primary transition-all duration-500 hover:text-primary-foreground" />
 							</div>
