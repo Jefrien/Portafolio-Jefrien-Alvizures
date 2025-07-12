@@ -13,7 +13,7 @@ export function Home() {
 	const { t } = useTranslation();
 	return (
 		<div class="home h-full">
-			<section className="container mx-auto px-4 xl:px-8 h-full">
+			<section id="home" className="container mx-auto px-4 xl:px-8 h-full">
 				<div className="flex flex-col xl:flex-row items-center justify-between pt-8 xl:pt-16 xl:pb-24">
 					<div className='text-center xl:text-left order-2 xl:order-none'>
 						<span className='text-xl min-h-[28px] block '>

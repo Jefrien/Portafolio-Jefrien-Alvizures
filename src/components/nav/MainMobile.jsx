@@ -8,11 +8,13 @@ import { useTranslation } from "react-i18next";
 import { LangSwitcher } from './LangSwitcher';
 import { SunIcon, MoonIcon } from 'lucide-react';
 import { useTheme } from '@/theme-provider';
+import { Button } from '../ui/button';
+import { XIcon } from 'lucide-react';
 
 const menuLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/contact', label: 'Contact' },
+    { href: '#home', label: 'Home' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
 ];
 
 export const MainMobile = () => {
@@ -62,16 +64,25 @@ export const MainMobile = () => {
                             animate={{ x: 0 }}
                             transition={{ duration: 0.3, delay: 0.2 }}
                             exit={{ x: 999 }}
-                            className='bg-neutral-100 dark:bg-neutral-900 p-6 flex flex-col gap-4 w-[95%] sm:w-[80%] md:w-[50%] h-screen '
+                            className='bg-neutral-100 dark:bg-neutral-900 p-6 flex flex-col gap-4 w-[80%] sm:w-[70%] md:w-[50%] h-screen '
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <a href="/">
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                className='cursor-pointer absolute top-4 right-4 rounded-full w-9 h-9 flex items-center justify-center'
+                                onClick={() => setIsOpen(false)}
+                            >
+                                <XIcon size={20} />
+                            </Button>
+
+                            <a href="#home" onClick={() => setIsOpen(false)}>
                                 <h1 className='text-2xl font-semibold text-center mt-20 mb-32'>
                                     Jefrien<span className='text-primary'>.</span>
                                 </h1>
                             </a>
                             {menuLinks.map((link) => (
-                                <a href={link.href} className={twMerge(
+                                <a href={link.href} onClick={() => setIsOpen(false)} className={twMerge(
                                     'capitalize text py-2 text-center font-medium hover:text-primary border-b-2 border-transparent transition-all hover:bg-primary/10',
                                     url == link.href && 'text-primary '
                                 )}>

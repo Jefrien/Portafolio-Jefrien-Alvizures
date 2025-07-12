@@ -13,6 +13,7 @@ export const ContactSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
+            id="contact"
             className="py-20 lg:py-32 bg-neutral-800 dark:bg-accent">
             <div className="container mx-auto px-4 xl:px-8">
                 <motion.h2
@@ -25,7 +26,7 @@ export const ContactSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mt-8">
                     <div>
-                        <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>Acerca de mí</h3>         
+                        <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>{t("About me")}</h3>         
 
                         <p className="text-neutral-200 text-center mb-8">
                             {t("about_me")}
@@ -51,7 +52,9 @@ export const ContactSection = () => {
                         </div>
                     </div>
                     <div>
-                        <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>Formulario de Contacto</h3>                        
+                        <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>
+                            {t("Contact Form")}
+                        </h3>                        
                         <ContactForm />
                     </div>
                 </div>

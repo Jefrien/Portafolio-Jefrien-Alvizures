@@ -10,32 +10,30 @@ export const ProjectsSection = () => {
     // @ts-ignore
     const { projects: projectsList } = t('projects', { returnObjects: true });
     const gridRef = useRef(null);
+    const itemsPerPage = 3;
 
-    const [projects, setProjects] = useState(projectsList);
+    const [projects, setProjects] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [shouldScroll, setShouldScroll] = useState(false);
 
-
-
+    // Efecto para manejar la paginación
     useEffect(() => {
+        if (!projectsList || !Array.isArray(projectsList)) return;
+
         const start = 0;
-        const end = page * 3;
+        const end = page * itemsPerPage;
         const paginatedProjects = projectsList.slice(start, end);
         setProjects(paginatedProjects);
-        
-        // Solo hacer scroll cuando se cargan más proyectos, no cuando se cargan menos
-        if (end > (page - 1) * 3 && page > 1) {
-            setShouldScroll(true);
-        }
-    }, [page]);
+    }, [page, projectsList]);
 
 
+    // Efecto para actualizar totalPages cuando cambia projectsList
     useEffect(() => {
-        // set totalPages
-        setTotalPages(Math.ceil(projectsList.length / 3));
-        setPage(1);
-    }, ['']);
+        if (!projectsList || !Array.isArray(projectsList)) return;
+        const total = Math.ceil(projectsList.length / itemsPerPage);
+        setTotalPages(total);
+    }, [projectsList, itemsPerPage]);
 
     useEffect(() => {
         if (shouldScroll && gridRef.current) {
@@ -59,6 +57,7 @@ export const ProjectsSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
+            id="projects"
             className="py-20 lg:py-32 bg-accent">
             <div className="container mx-auto px-4 xl:px-8">
                 <motion.h2 
@@ -106,7 +105,10 @@ export const ProjectsSection = () => {
                         {t("Load Less")}
                     </Button>
                     <Button
-                        onClick={() => setPage(page + 1)}
+                        onClick={() => {
+                            setPage(prev => prev + 1);
+                            setShouldScroll(true);
+                        }}
                         disabled={page === totalPages}
                         className="disabled:opacity-50 hover:!bg-white hover:opacity-80 cursor-pointer dark:hover:!bg-transparent"
                         variant="outline"

@@ -7,9 +7,9 @@ import { LangSwitcher } from './LangSwitcher';
 import { Button } from '../ui/button';
 
 const menuLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/contact', label: 'Contact' },
+    { href: '#home', label: 'Home' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
 ];
 
 
@@ -30,7 +30,9 @@ export const MainDesktop = () => {
                 </a>
             ))}
 
-            <Button variant="default" size="lg" className='cursor-pointer' >{t('Hire me')}</Button>
+            <a href="https://wa.me/50259219162" target="_blank" rel="noopener noreferrer" >
+                <Button variant="default" size="lg" className='cursor-pointer' >{t('Hire me')}</Button>
+            </a>
 
             <div className="flex gap-2 lg:gap-4 items-center ml-4">
                 <LangSwitcher />
