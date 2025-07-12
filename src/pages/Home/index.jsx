@@ -6,6 +6,8 @@ import { Social } from "@/components/sections/header/Social";
 import { Photo } from "@/components/sections/header/Photo";
 import { Stats } from "@/components/sections/header/Stats";
 import { ProjectsSection } from "@/components/sections/projects";
+import { ContactSection } from "@/components/sections/contact";
+import { FooterSection } from "@/components/sections/footer";
 
 export function Home() {
 	const { t } = useTranslation();
@@ -48,6 +50,8 @@ export function Home() {
 			</section>
 
 			<ProjectsSection />
+			<ContactSection />
+			<FooterSection />
 		</div>
 	);
 }

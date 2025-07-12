@@ -32,7 +32,7 @@ export const MainDesktop = () => {
 
             <Button variant="default" size="lg" className='cursor-pointer' >{t('Hire me')}</Button>
 
-            <div className="flex gap-4 items-center ml-4">
+            <div className="flex gap-2 lg:gap-4 items-center ml-4">
                 <LangSwitcher />
 
                 <button

@@ -59,20 +59,20 @@ export const ProjectsSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="py-32">
+            className="py-20 lg:py-32 bg-accent">
             <div className="container mx-auto px-4 xl:px-8">
                 <motion.h2 
                     initial={{ y: -20 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-4xl text-center font-semibold mb-6 mt-4 xl:mt-2">
+                    className="text-4xl text-center font-semibold mb-6 mt-4 xl:mt-2 text-white">
                     {t("Projects")}
                 </motion.h2>
 
                 <motion.div 
                     ref={gridRef}
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <AnimatePresence mode="sync">
                         {projects.length > 0 &&
                             // @ts-ignore
@@ -100,7 +100,7 @@ export const ProjectsSection = () => {
                     <Button
                         onClick={() => setPage(page - 1)}
                         disabled={page === 1}
-                        className="disabled:opacity-50"
+                        className="disabled:opacity-50 hover:!bg-white hover:opacity-80 cursor-pointer dark:hover:!bg-transparent"
                         variant="outline"
                     >
                         {t("Load Less")}
@@ -108,7 +108,7 @@ export const ProjectsSection = () => {
                     <Button
                         onClick={() => setPage(page + 1)}
                         disabled={page === totalPages}
-                        className="disabled:opacity-50"
+                        className="disabled:opacity-50 hover:!bg-white hover:opacity-80 cursor-pointer dark:hover:!bg-transparent"
                         variant="outline"
                     >
                         {t("Load More")}

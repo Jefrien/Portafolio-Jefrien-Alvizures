@@ -31,7 +31,7 @@ export function Header() {
 			<div className="container px-4 xl:px-8 mx-auto flex justify-between items-center">
 
 				<a href="/">
-					<h1 className='text-4xl font-semibold'>
+					<h1 className='text-3xl lg:text-4xl font-semibold'>
 						Jefrien<span className='text-primary animate-pulse'>.</span>
 					</h1>
 				</a>

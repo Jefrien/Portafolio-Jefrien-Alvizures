@@ -26,7 +26,7 @@ export const MainMobile = () => {
         <div className="lg:hidden">
             <div className="flex items-center">
 
-                <div className="flex gap-4 items-center">
+                <div className="flex gap-1 lg:gap-4 items-center">
                     <LangSwitcher />
 
                     <button
