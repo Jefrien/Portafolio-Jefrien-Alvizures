@@ -8,6 +8,7 @@ import { Stats } from "@/components/sections/header/Stats";
 import { ProjectsSection } from "@/components/sections/projects";
 import { ContactSection } from "@/components/sections/contact";
 import { FooterSection } from "@/components/sections/footer";
+import { ServicesAndSkills } from "@/components/sections/services/ServicesAndSkills";
 
 export function Home() {
 	const { t } = useTranslation();
@@ -52,6 +53,7 @@ export function Home() {
 			</section>
 
 			<ProjectsSection />
+			<ServicesAndSkills />
 			<ContactSection />
 			<FooterSection />
 		</div>

@@ -43,5 +43,6 @@ export default {
         'Message sent successfully': 'Mensaje enviado correctamente',
         'Contact Form': 'Formulario de Contacto',
         'About me': 'Acerca de mí',
+        'Services & Skills': 'Servicios & Habilidades',
     }
 }   
