@@ -30,7 +30,7 @@ export const ServicesAndSkills = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
                     <div className="py-4 md:py-12 ">
-                        <h2 className="text-3xl font-bold mb-8">🚀 Servicios</h2>
+                        <h2 className="text-3xl font-bold mb-8">🚀 {t("Services")}</h2>
                         <Accordion
                             type="single"
                             collapsible
@@ -38,39 +38,39 @@ export const ServicesAndSkills = () => {
                             defaultValue="item-1"
                         >
                             <AccordionItem value="item-1">
-                                <AccordionTrigger>Desarrollo Web Full-Stack</AccordionTrigger>
+                                <AccordionTrigger>{t("Full-Stack Web Development")}</AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    Aplicaciones web modernas y escalables con JavaScript, Node.js, PHP, Laravel, Vue y React. Desde el diseño hasta el despliegue.
+                                    {t("full_stack_service_description")}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-2">
-                                <AccordionTrigger>Sistemas Administrativos</AccordionTrigger>
+                                <AccordionTrigger>{t("Administrative Systems Development")}</AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    Paneles de control, gestión de inventarios, presupuestos, facturación, CRM y más, adaptados a cada negocio.
+                                    {t("admin_systems_service_description")}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-3">
-                                <AccordionTrigger>Integración de APIs y Automatización</AccordionTrigger>
+                                <AccordionTrigger>{t("API Integration and Automation")}</AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    Integración con APIs externas (Deezer, YouTube, OpenAI, WhatsApp, Google, etc). Automatización de procesos con Node.js, N8N o Zapier.
+                                    {t("api_integration_service_description")}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-4">
-                                <AccordionTrigger>Implementación de IA en proyectos</AccordionTrigger>
+                                <AccordionTrigger>{t("Implementation of AI in projects")}</AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    Sistemas inteligentes con GPT, Whisper, OCR, chatbots y análisis de lenguaje natural aplicados a soluciones reales.
+                                    {t("ai_implementation_service_description")}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-5">
-                                <AccordionTrigger>Optimización y SEO</AccordionTrigger>
+                                <AccordionTrigger>{t("Optimization and SEO")}</AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    Mejoras en velocidad de carga, buenas prácticas de accesibilidad, SEO técnico y estructura de datos para posicionamiento.
+                                    {t("optimization_service_description")}
                                 </AccordionContent>
                             </AccordionItem>
                             <AccordionItem value="item-6">
-                                <AccordionTrigger>E-commerce y Landing Pages</AccordionTrigger>
+                                <AccordionTrigger>{t("E-commerce and Landing Pages")}</AccordionTrigger>
                                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                                    Tiendas online en WooCommerce o desarrollos a medida, incluyendo diseño personalizado y widgets propios.
+                                    {t("ecommerce_service_description")}
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>
@@ -79,9 +79,9 @@ export const ServicesAndSkills = () => {
 
                     <section id="skills" className="py-4 md:py-12 ">
                         <div className="max-w-5xl mx-auto px-6">
-                            <h2 className="text-3xl font-bold mb-8">🧠 Habilidades Técnicas</h2>
+                            <h2 className="text-3xl font-bold mb-8">🧠 {t("Technical Skills")}</h2>
 
-                            <h3 className="text-lg font-semibold mt-4">Lenguajes</h3>
+                            <h3 className="text-lg font-semibold mt-4">{t("Languages")}</h3>
                             <p className="mt-2 flex flex-wrap gap-2">
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">JavaScript</span>
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">PHP</span>
@@ -89,7 +89,7 @@ export const ServicesAndSkills = () => {
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Python</span>
                             </p>
 
-                            <h3 className="text-lg font-semibold mt-4">Frameworks y Librerías</h3>
+                            <h3 className="text-lg font-semibold mt-4">{t("Frameworks and Libraries")}</h3>
                             <p className="mt-2 flex flex-wrap gap-2">
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">React</span>
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Vue</span>
@@ -98,7 +98,7 @@ export const ServicesAndSkills = () => {
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Astro</span>
                             </p>
 
-                            <h3 className="text-lg font-semibold mt-4">Bases de Datos</h3>
+                            <h3 className="text-lg font-semibold mt-4">{t("Databases")}</h3>
                             <p className="mt-2 flex flex-wrap gap-2">
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">MySQL</span>
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">MongoDB</span>
@@ -106,7 +106,7 @@ export const ServicesAndSkills = () => {
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Supabase</span>
                             </p>
 
-                            <h3 className="text-lg font-semibold mt-4">DevOps y Cloud</h3>
+                            <h3 className="text-lg font-semibold mt-4">{t("DevOps and Cloud")}</h3>
                             <p className="mt-2 flex flex-wrap gap-2">
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">AWS Lambda</span>
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Firebase Hosting</span>
@@ -114,7 +114,7 @@ export const ServicesAndSkills = () => {
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Docker</span>
                             </p>
 
-                            <h3 className="text-lg font-semibold mt-4">Herramientas</h3>
+                            <h3 className="text-lg font-semibold mt-4">{t("Tools")}</h3>
                             <p className="mt-2 flex flex-wrap gap-2">
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">VSCode</span>
                                 <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Git</span>
