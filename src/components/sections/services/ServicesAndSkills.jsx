@@ -17,7 +17,7 @@ export const ServicesAndSkills = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            id="contact"
+            id="services"
             className="py-20 lg:py-32 ">
             <div className="container mx-auto px-4 xl:px-8">
                 <motion.h2

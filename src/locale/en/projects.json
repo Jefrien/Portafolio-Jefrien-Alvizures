@@ -38,7 +38,12 @@
       "image": "projects/karaoke",
       "url": "https://karaoke.jefrien.dev/",
       "github": false,
-      "technologies": ["Preact", "Spotify API", "YouTube API", "Tailwind CSS"]
+      "technologies": [
+        "Preact",
+        "Spotify API",
+        "YouTube API",
+        "Tailwind CSS"
+      ]
     },
     {
       "slug": "remote-dev",
@@ -46,7 +51,7 @@
       "description": "Visual Studio Code extension that enables remote connections to servers via FTP, SFTP, or SSH. Allows direct editing of remote files while keeping your development environment clean, efficient, and in sync.",
       "image": "projects/remote_dev",
       "url": "https://marketplace.visualstudio.com/items?itemName=jdevs.remote-development-ts",
-      "github": false,
+      "github": "https://github.com/Jefrien/Remote-Development-VSCode",
       "technologies": [
         "Visual Studio Code",
         "Node.js",
@@ -79,7 +84,13 @@
       "image": "projects/sheinapp",
       "url": "https://shein.jefrien.dev/",
       "github": false,
-      "technologies": ["Vue 3", "Nuxt.js", "MongoDB", "Vuetify", "TypeScript"]
+      "technologies": [
+        "Vue 3",
+        "Nuxt.js",
+        "MongoDB",
+        "Vuetify",
+        "TypeScript"
+      ]
     },
     {
       "slug": "citas-app",
@@ -137,7 +148,13 @@
       "image": "projects/infinity-space",
       "url": "https://jefrien.itch.io/infinity-space",
       "github": false,
-      "technologies": ["Godot Engine", "Pixel Art", "HTML5 Export", "Touch Controls", "Itch.io"]
+      "technologies": [
+        "Godot Engine",
+        "Pixel Art",
+        "HTML5 Export",
+        "Touch Controls",
+        "Itch.io"
+      ]
     }
   ]
 }

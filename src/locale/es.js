@@ -10,6 +10,7 @@ export default {
         "Projects": "Proyectos",
         "Contact": "Contacto",
         "Hire me": "Contratame",
+        "Services": "Servicios",
         // home
         "Hello I'm": "Hola soy",
         "Full Stack Developer passionate about building smart, scalable, and user-friendly web applications.": "Desarrollador Full Stack apasionado por crear aplicaciones web inteligentes, escalables y fáciles de usar.",
@@ -19,7 +20,7 @@ export default {
         // stats
         "Years of experience": "Años de experiencia",
         "Projects completed": "Proyectos completados",
-        "Technologies mastered": "Tecnologías dominadas",   
+        "Technologies mastered": "Tecnologías dominadas",
 
         // collections
         'projects': projects,
@@ -31,7 +32,7 @@ export default {
         'Name': 'Nombre',
         'Email': 'Correo electrónico',
         'Message': 'Mensaje',
-        'Send': 'Enviar',        
+        'Send': 'Enviar',
         'Your name': 'Tu nombre',
         'Your email': 'Tu correo electrónico',
         'Your message': 'Tu mensaje',

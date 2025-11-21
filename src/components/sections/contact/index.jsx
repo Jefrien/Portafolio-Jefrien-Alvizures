@@ -6,8 +6,6 @@ import { FaGithub, FaLinkedin, FaPhone, FaWhatsapp } from 'react-icons/fa';
 export const ContactSection = () => {
     const { t } = useTranslation();
 
-
-
     return (
         <motion.section
             initial={{ opacity: 0 }}
@@ -26,7 +24,7 @@ export const ContactSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mt-8">
                     <div>
-                        <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>{t("About me")}</h3>         
+                        <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>{t("About me")}</h3>
 
                         <p className="text-neutral-200 text-center mb-8">
                             {t("about_me")}
@@ -54,7 +52,7 @@ export const ContactSection = () => {
                     <div>
                         <h3 className='text-xl font-semibold mb-6 mt-4 xl:mt-2 text-white text-center'>
                             {t("Contact Form")}
-                        </h3>                        
+                        </h3>
                         <ContactForm />
                     </div>
                 </div>

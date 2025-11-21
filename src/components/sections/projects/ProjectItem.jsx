@@ -3,16 +3,18 @@ import Image from "@/components/Image";
 import { EyeIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { GithubIcon } from "lucide-react";
 
 
 export const ProjectItem = ({ project }) => {
     const { t } = useTranslation();
     return (
-        <motion.div
+        <motion.a
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            href={project.url}
             className="flex flex-col h-full rounded-lg shadow-lg overflow-hidden group p-4 bg-secondary border border-primary/10">
             <div className='h-64 relative overflow-hidden rounded-lg'	>
                 <Image
@@ -25,12 +27,14 @@ export const ProjectItem = ({ project }) => {
                 />
                 <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-between ">
                     <div className='group-hover:opacity-100 lg:opacity-0 p-2 transition-all duration-300 bg-gradient-to-b from-black/60 to-transparent w-full flex gap-4 items-center justify-end'>
-                        <a href={`/projects/${project.slug}`} className='py-0 rounded px-2 bg-primary text-white dark:bg-primary dark:text-black text-sm font-semibold flex items-center gap-2'>
-                            <EyeIcon size={16} />
-                            {t('more_details')}
-                        </a>                        
+                        {project.github && (
+                            <a href={project.github} className='py-0 rounded px-2 bg-primary text-white dark:bg-primary dark:text-black text-sm font-semibold flex items-center gap-2'>
+                                <GithubIcon size={16} />
+                                GitHub
+                            </a>
+                        )}
                     </div>
-                    
+
                 </div>
 
 
@@ -48,6 +52,6 @@ export const ProjectItem = ({ project }) => {
                 </div>
                 <p className="text-sm text-neutral-800 dark:text-neutral-300 line-clamp-4">{project.description}</p>
             </div>
-        </motion.div>
+        </motion.a>
     )
 }

@@ -8,10 +8,11 @@ export default {
         // nav
         "Home": "Home",
         "Projects": "Projects",
-        "Contact": "Contact",     
+        "Contact": "Contact",
         "Hire me": "Hire me",
+        "Services": "Services",
         // home
-        "Hello I'm": "Hello I'm",   
+        "Hello I'm": "Hello I'm",
         "Full Stack Developer passionate about building smart, scalable, and user-friendly web applications.": "Full Stack Developer passionate about building smart, scalable, and user-friendly web applications.",
         "Download CV": "Download CV",
         "Load Less": "Load Less",
@@ -32,7 +33,7 @@ export default {
         'Name': 'Name',
         'Email': 'Email',
         'Message': 'Message',
-        'Send': 'Send',        
+        'Send': 'Send',
         'Your name': 'Your name',
         'Your email': 'Your email',
         'Your message': 'Your message',

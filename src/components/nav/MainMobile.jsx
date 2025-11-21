@@ -14,6 +14,7 @@ import { XIcon } from 'lucide-react';
 const menuLinks = [
     { href: '#home', label: 'Home' },
     { href: '#projects', label: 'Projects' },
+    { href: '#services', label: 'Services' },
     { href: '#contact', label: 'Contact' },
 ];
 
