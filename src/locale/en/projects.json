@@ -1,11 +1,57 @@
 {
   "projects": [
     {
+      "slug": "la-tarima",
+      "title": "La Tarima",
+      "description": "Competitive karaoke for groups. Create a room, pick songs by vote or roulette, and compete for the highest score.",
+      "image": "projects/la-tarima",
+      "url": "https://latarima.app/",
+      "github": false,
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Laravel",
+        "Laravel Reverb",
+        "Capacitor"
+      ]
+    },
+    {
+      "slug": "comapa-3d",
+      "title": "Comapa 3D",
+      "description": "Website and catalog for a 3D printing studio in Jutiapa, Guatemala. Browse customizable products and request quotes via WhatsApp.",
+      "image": "projects/comapa-3d",
+      "url": "https://comapa-3d.vercel.app/",
+      "github": false,
+      "technologies": [
+        "Astro",
+        "Tailwind CSS",
+        "Vercel"
+      ]
+    },
+    {
+      "slug": "milocal-gt",
+      "title": "Mi Local GT",
+      "description": "Uber-style app designed to connect local businesses with nearby customers. Built with Vue 3, Nuxt.js, and Vuetify. Uses Firebase for backend, authentication, and real-time database. Ideal for small businesses looking to digitalize their delivery or service systems.",
+      "image": "projects/milocal",
+      "url": "https://milocalgt.app",
+      "github": false,
+      "technologies": [
+        "Vue 3",
+        "Vite",
+        "Shadcn",
+        "CapacitorJS",
+        "Google Auth",
+        "MySQL"
+      ]
+    },
+    {
       "slug": "wasapi",
       "title": "Wasapi",
       "description": "System for managing multiple WhatsApp Business instances, featuring webhook integration and a robust REST API. Built with Next.js and Supabase. Ideal for automation and customer support.",
       "image": "projects/wasapi",
-      "url": "https://wasapi.cloud/",
+      "url": "https://wasapi-kohl.vercel.app/",
       "github": false,
       "technologies": [
         "Next.js",
@@ -36,13 +82,27 @@
       "title": "KaraOKE",
       "description": "Built with Preact, it lets users search and play karaoke videos from YouTube. It leverages the Spotify API to fetch song data and playlists. Features include song history, pitch adjustment, and more.",
       "image": "projects/karaoke",
-      "url": "https://karaoke.jefrien.dev/",
+      "url": "https://karaoke-ecru-iota.vercel.app/",
       "github": false,
       "technologies": [
         "Preact",
         "Spotify API",
         "YouTube API",
         "Tailwind CSS"
+      ]
+    },
+    {
+      "slug": "react-roulette",
+      "title": "React Roulette",
+      "description": "React library for building animated, customizable roulette wheels. Pick a random winner or animate the spin to a server-selected result. Includes TypeScript types and optional sound effects.",
+      "image": "projects/react-roulette",
+      "url": "https://www.npmjs.com/package/@jdevs/react-roulette",
+      "github": false,
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS",
+        "npm"
       ]
     },
     {
@@ -123,22 +183,6 @@
         "Firebase",
         "Google Auth",
         "CapacitorJS"
-      ]
-    },
-    {
-      "slug": "milocal-gt",
-      "title": "Mi Local GT",
-      "description": "Uber-style app designed to connect local businesses with nearby customers. Built with Vue 3, Nuxt.js, and Vuetify. Uses Firebase for backend, authentication, and real-time database. Ideal for small businesses looking to digitalize their delivery or service systems.",
-      "image": "projects/milocal",
-      "url": "https://milocal.jefrien.dev/tienda",
-      "github": false,
-      "technologies": [
-        "Vue 3",
-        "Nuxt.js",
-        "Vuetify",
-        "Firebase",
-        "Google Auth",
-        "Real-time DB"
       ]
     },
     {

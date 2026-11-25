@@ -1,11 +1,41 @@
 {
   "projects": [
     {
+      "slug": "la-tarima",
+      "title": "La Tarima",
+      "description": "Karaoke competitivo para jugar en grupo. Crea una sala, elige canciones por votación o ruleta y compite por la mejor puntuación.",
+      "image": "projects/la-tarima",
+      "url": "https://latarima.app/",
+      "github": false,
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Tailwind CSS",
+        "Laravel",
+        "Laravel Reverb",
+        "Capacitor"
+      ]
+    },
+    {
+      "slug": "comapa-3d",
+      "title": "Comapa 3D",
+      "description": "Sitio web y catálogo de un taller de impresión 3D en Jutiapa, Guatemala. Permite explorar piezas personalizables y solicitar cotizaciones por WhatsApp.",
+      "image": "projects/comapa-3d",
+      "url": "https://comapa-3d.vercel.app/",
+      "github": false,
+      "technologies": [
+        "Astro",
+        "Tailwind CSS",
+        "Vercel"
+      ]
+    },
+    {
       "slug": "wasapi",
       "title": "Wasapi",
       "description": "Sistema para la gestión de múltiples instancias de WhatsApp Business, con integración de webhooks y una REST API robusta. Desarrollado con Next.js y Supabase. Ideal para automatización y atención al cliente.",
       "image": "projects/wasapi",
-      "url": "https://wasapi.cloud/",
+      "url": "https://wasapi-kohl.vercel.app/",
       "github": false,
       "technologies": [
         "Next.js",
@@ -36,13 +66,27 @@
       "title": "KaraOKE",
       "description": "Desarrollada con Preact, permite buscar y reproducir karaokes desde YouTube. Utiliza la API de Spotify para obtener información y playlists. Incluye funciones avanzadas como historial de canciones, cambio de tono y más.",
       "image": "projects/karaoke",
-      "url": "https://karaoke.jefrien.dev/",
+      "url": "https://karaoke-ecru-iota.vercel.app/",
       "github": false,
       "technologies": [
         "Preact",
         "Spotify API",
         "YouTube API",
         "Tailwind CSS"
+      ]
+    },
+    {
+      "slug": "react-roulette",
+      "title": "React Roulette",
+      "description": "Librería de React para crear ruletas animadas y personalizables. Permite elegir al azar o animar el giro hacia un resultado definido por el servidor. Incluye tipos de TypeScript y efectos de sonido opcionales.",
+      "image": "projects/react-roulette",
+      "url": "https://www.npmjs.com/package/@jdevs/react-roulette",
+      "github": false,
+      "technologies": [
+        "React",
+        "TypeScript",
+        "CSS",
+        "npm"
       ]
     },
     {

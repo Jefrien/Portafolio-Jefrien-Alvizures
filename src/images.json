@@ -108,5 +108,35 @@
     },
     "path": "/projects",
     "original": "projects/infinity-space-original.avif"
+  },
+  "projects/la-tarima": {
+    "320": {
+      "avif": "projects/la-tarima-320.avif"
+    },
+    "768": {
+      "avif": "projects/la-tarima-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/la-tarima-original.avif"
+  },
+  "projects/comapa-3d": {
+    "320": {
+      "avif": "projects/comapa-3d-320.avif"
+    },
+    "768": {
+      "avif": "projects/comapa-3d-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/comapa-3d-original.avif"
+  },
+  "projects/react-roulette": {
+    "320": {
+      "avif": "projects/react-roulette-320.avif"
+    },
+    "768": {
+      "avif": "projects/react-roulette-768.avif"
+    },
+    "path": "/projects",
+    "original": "projects/react-roulette-original.avif"
   }
 }
