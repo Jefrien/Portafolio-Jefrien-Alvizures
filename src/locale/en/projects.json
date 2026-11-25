@@ -1,9 +1,23 @@
 {
   "projects": [
     {
+      "slug": "milocal-gt",
+      "title": "Mi Local GT",
+      "description": "I built a web and mobile platform that helps local businesses sell online. Customers can discover nearby stores, browse their catalogs, and track their orders. Each business gets a dashboard to list products, update prices, and manage orders from placement through delivery.",
+      "image": "projects/milocal",
+      "url": "https://milocalgt.app/",
+      "github": false,
+      "technologies": [
+        "Vue 3",
+        "shadcn-vue",
+        "Tailwind CSS",
+        "Capacitor"
+      ]
+    },
+    {
       "slug": "la-tarima",
       "title": "La Tarima",
-      "description": "Competitive karaoke for groups. Create a room, pick songs by vote or roulette, and compete for the highest score.",
+      "description": "I built competitive karaoke rooms so groups can play from their own devices. I implemented voting and roulette for song selection and used Laravel Reverb to synchronize turns and results in real time. I also built an AI mode that recommends songs for the room.",
       "image": "projects/la-tarima",
       "url": "https://latarima.app/",
       "github": false,
@@ -14,13 +28,16 @@
         "Tailwind CSS",
         "Laravel",
         "Laravel Reverb",
-        "Capacitor"
-      ]
+        "Capacitor",
+        "OpenAI API",
+        "Gemini API"
+      ],
+      "googlePlayUrl": "https://play.google.com/store/apps/details?id=dev.jdevs.latarima&pli=1"
     },
     {
       "slug": "comapa-3d",
       "title": "Comapa 3D",
-      "description": "Website and catalog for a 3D printing studio in Jutiapa, Guatemala. Browse customizable products and request quotes via WhatsApp.",
+      "description": "I built a catalog for a 3D printing studio in Jutiapa, Guatemala. I added galleries and product pages with WhatsApp links that let customers request a quote for a specific item.",
       "image": "projects/comapa-3d",
       "url": "https://comapa-3d.vercel.app/",
       "github": false,
@@ -31,25 +48,9 @@
       ]
     },
     {
-      "slug": "milocal-gt",
-      "title": "Mi Local GT",
-      "description": "Uber-style app designed to connect local businesses with nearby customers. Built with Vue 3, Nuxt.js, and Vuetify. Uses Firebase for backend, authentication, and real-time database. Ideal for small businesses looking to digitalize their delivery or service systems.",
-      "image": "projects/milocal",
-      "url": "https://milocalgt.app",
-      "github": false,
-      "technologies": [
-        "Vue 3",
-        "Vite",
-        "Shadcn",
-        "CapacitorJS",
-        "Google Auth",
-        "MySQL"
-      ]
-    },
-    {
       "slug": "wasapi",
       "title": "Wasapi",
-      "description": "System for managing multiple WhatsApp Business instances, featuring webhook integration and a robust REST API. Built with Next.js and Supabase. Ideal for automation and customer support.",
+      "description": "I built a dashboard for managing multiple WhatsApp Business instances in one place. I integrated webhooks and a REST API to connect customer support and automation workflows.",
       "image": "projects/wasapi",
       "url": "https://wasapi-kohl.vercel.app/",
       "github": false,
@@ -65,7 +66,7 @@
     {
       "slug": "mi-dulce-tentacion-gt",
       "title": "Mi Dulce Tentación GT",
-      "description": "Bakery website built with WordPress and WooCommerce, featuring cash-on-delivery payments. Includes a custom theme styled with Tailwind CSS and serves as a REST API for an Android management app.",
+      "description": "Bakery website built with WordPress and WooCommerce, featuring cash-on-delivery payments. Includes a custom theme styled with Tailwind CSS and serves as a REST API for an Android management app. I also built a WhatsApp assistant with the OpenAI API to answer questions and take orders.",
       "image": "projects/mi-dulce-tentacion-gt",
       "url": "https://dulcetentaciongt.com/",
       "github": false,
@@ -74,7 +75,8 @@
         "PHP",
         "MySQL",
         "Tailwind CSS",
-        "WooCommerce"
+        "WooCommerce",
+        "OpenAI API"
       ]
     },
     {

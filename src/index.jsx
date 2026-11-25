@@ -24,6 +24,9 @@ i18n
 	});
 
 if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+	i18n.on('languageChanged', () => {
+		document.documentElement.lang = i18n.resolvedLanguage || 'en';
+	});
 	i18n.changeLanguage(localStorage.getItem('lang') || 'en');
 }
 

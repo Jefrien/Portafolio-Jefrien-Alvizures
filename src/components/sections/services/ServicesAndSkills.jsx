@@ -5,7 +5,17 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion"
+} from "@/components/ui/accordion";
+import { Braces, Cloud, Database, Layers, Smartphone, Workflow } from "lucide-react";
+
+const skillGroups = [
+    { title: "Frontend", icon: Layers, skills: ["React", "Vue 3", "Astro", "Tailwind CSS", "shadcn-vue"] },
+    { title: "Backend and APIs", icon: Braces, skills: ["TypeScript", "JavaScript", "PHP", "Laravel", "Node.js", "REST APIs"] },
+    { title: "AI and automation", icon: Workflow, skills: ["OpenAI API", "Gemini API", "n8n", "Webhooks"] },
+    { title: "Mobile and real time", icon: Smartphone, skills: ["Capacitor", "Laravel Reverb", "WebSockets"] },
+    { title: "Databases", icon: Database, skills: ["MySQL", "PostgreSQL", "Supabase", "MongoDB"] },
+    { title: "DevOps and Cloud", icon: Cloud, skills: ["Docker", "AWS Lambda", "Cloudflare Workers", "Vercel", "Git"] },
+];
 
 export const ServicesAndSkills = () => {
     const { t } = useTranslation();
@@ -14,7 +24,7 @@ export const ServicesAndSkills = () => {
 
     return (
         <motion.section
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             id="services"
@@ -28,9 +38,9 @@ export const ServicesAndSkills = () => {
                     {t("Services & Skills")}
                 </motion.h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+                <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] gap-10 lg:gap-14 mt-12">
                     <div className="py-4 md:py-12 ">
-                        <h2 className="text-3xl font-bold mb-8">🚀 {t("Services")}</h2>
+                        <h2 className="text-3xl font-bold mb-8">{t("Services")}</h2>
                         <Accordion
                             type="single"
                             collapsible
@@ -77,51 +87,24 @@ export const ServicesAndSkills = () => {
                     </div>
 
 
-                    <section id="skills" className="py-4 md:py-12 ">
-                        <div className="max-w-5xl mx-auto px-6">
-                            <h2 className="text-3xl font-bold mb-8">🧠 {t("Technical Skills")}</h2>
-
-                            <h3 className="text-lg font-semibold mt-4">{t("Languages")}</h3>
-                            <p className="mt-2 flex flex-wrap gap-2">
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">JavaScript</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">PHP</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">TypeScript</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Python</span>
-                            </p>
-
-                            <h3 className="text-lg font-semibold mt-4">{t("Frameworks and Libraries")}</h3>
-                            <p className="mt-2 flex flex-wrap gap-2">
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">React</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Vue</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Laravel</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">WordPress</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Astro</span>
-                            </p>
-
-                            <h3 className="text-lg font-semibold mt-4">{t("Databases")}</h3>
-                            <p className="mt-2 flex flex-wrap gap-2">
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">MySQL</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">MongoDB</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Firebase</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Supabase</span>
-                            </p>
-
-                            <h3 className="text-lg font-semibold mt-4">{t("DevOps and Cloud")}</h3>
-                            <p className="mt-2 flex flex-wrap gap-2">
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">AWS Lambda</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Firebase Hosting</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Cloudflare Workers</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Docker</span>
-                            </p>
-
-                            <h3 className="text-lg font-semibold mt-4">{t("Tools")}</h3>
-                            <p className="mt-2 flex flex-wrap gap-2">
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">VSCode</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Git</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">JetBrains</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Zed</span>
-                                <span className="bg-white dark:bg-gray-800 px-3 py-1 rounded-full shadow text-sm">Github Copilot</span>
-                            </p>
+                    <section id="skills" aria-labelledby="skills-title" className="py-4 md:py-12">
+                        <h2 id="skills-title" className="mb-8 text-3xl font-bold">{t("Technical Skills")}</h2>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            {skillGroups.map(({ title, icon: Icon, skills }) => (
+                                <div key={title} className="rounded-xl border border-primary/15 bg-secondary p-4">
+                                    <h3 className="mb-3 flex items-center gap-2 font-semibold">
+                                        <Icon size={18} aria-hidden="true" className="shrink-0 text-primary" />
+                                        {t(title)}
+                                    </h3>
+                                    <ul className="flex flex-wrap gap-2">
+                                        {skills.map((skill) => (
+                                            <li key={skill} className="rounded-full border border-primary/15 px-3 py-1 text-sm text-foreground">
+                                                {skill}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
                         </div>
                     </section>
 

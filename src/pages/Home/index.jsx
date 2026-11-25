@@ -24,10 +24,13 @@ export function Home() {
 							<br /> <span className="text-primary">Jefrien Alvizures</span>
 						</h1>
 						<p className='max-w-[500px] mb-9 text-black/80 dark:text-white/80'>
-							{t("Full Stack Developer passionate about building smart, scalable, and user-friendly web applications.")}
+							{t("portfolio_intro")}
 						</p>
 
 						<div className="flex flex-col xl:flex-row gap-8 items-center">
+							<a href="#projects" className="inline-flex items-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground">
+								{t("View projects")}
+							</a>
 							<a href="/files/Jefrien Alvizures - esp.pdf" target="_blank" rel="noopener noreferrer" download>
 								<Button variant="outline" size="xl" color="primary" className="uppercase flex items-center gap-2 border-primary rounded-4xl hover:!bg-primary hover:!text-primary-foreground cursor-pointer">
 									<span>{t("Download CV")}</span>

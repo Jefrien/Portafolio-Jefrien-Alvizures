@@ -1,8 +1,11 @@
 import TypewriterTitle from "@/components/kokonutui/type-writer";
 
+import { useMemo } from "preact/hooks";
+import { useTranslation } from "react-i18next";
+
 const words = [
     {
-        text: "Frontend Developer (React, Vue)",
+        text: "Full-Stack Developer and AI Integrator",
         deleteAfter: true
     },
     {
@@ -14,7 +17,7 @@ const words = [
         deleteAfter: true
     },
     {
-        text: "AI Integrator (ChatGPT, LangChain)",
+        text: "Frontend Developer (React, Vue)",
         deleteAfter: true
     },
     {
@@ -23,7 +26,9 @@ const words = [
     }
 ]
 const TypeWriterHome = () => {
-  return <TypewriterTitle sequences={words} />
+    const { t, i18n } = useTranslation();
+    const sequences = useMemo(() => words.map((word) => ({ ...word, text: t(word.text) })), [t]);
+    return <TypewriterTitle key={i18n.resolvedLanguage} sequences={sequences} />;
 }
 
 export default TypeWriterHome

@@ -1,21 +1,16 @@
 
 import Image from "@/components/Image";
-import { EyeIcon } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 import { GithubIcon } from "lucide-react";
+import { FaAndroid } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 
 export const ProjectItem = ({ project }) => {
     const { t } = useTranslation();
+
     return (
-        <motion.a
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            href={project.url}
-            className="flex flex-col h-full rounded-lg shadow-lg overflow-hidden group p-4 bg-secondary border border-primary/10">
+        <article
+            className="relative flex flex-col h-full rounded-lg shadow-lg overflow-hidden group p-4 bg-secondary border border-primary/10">
             <div className='h-64 relative overflow-hidden rounded-lg'	>
                 <Image
                     src={project.image}
@@ -28,7 +23,7 @@ export const ProjectItem = ({ project }) => {
                 <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-between ">
                     <div className='group-hover:opacity-100 lg:opacity-0 p-2 transition-all duration-300 bg-gradient-to-b from-black/60 to-transparent w-full flex gap-4 items-center justify-end'>
                         {project.github && (
-                            <a href={project.github} className='py-0 rounded px-2 bg-primary text-white dark:bg-primary dark:text-black text-sm font-semibold flex items-center gap-2'>
+                            <a href={project.github} className='relative z-20 py-0 rounded px-2 bg-primary text-white dark:bg-primary dark:text-black text-sm font-semibold flex items-center gap-2'>
                                 <GithubIcon size={16} />
                                 GitHub
                             </a>
@@ -41,7 +36,7 @@ export const ProjectItem = ({ project }) => {
             </div>
             <div>
                 <div className="flex flex-col items-start justify-center mb-1 mt-2">
-                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                    <a href={project.url} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0 after:z-10 after:rounded-lg focus-visible:after:ring-2 focus-visible:after:ring-primary">
                         <h3 className="text-xl font-semibold">{project.title}</h3>
                     </a>
                     <div className="flex flex-wrap gap-2 my-2 h-12">
@@ -50,8 +45,21 @@ export const ProjectItem = ({ project }) => {
                         ))}
                     </div>
                 </div>
-                <p className="text-sm text-neutral-800 dark:text-neutral-300 line-clamp-4">{project.description}</p>
+                <p className="text-sm text-neutral-800 dark:text-neutral-300">{project.description}</p>
             </div>
-        </motion.a>
+            {project.googlePlayUrl && (
+                <div className="mt-auto pt-4">
+                    <a
+                        href={project.googlePlayUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-20 inline-flex min-h-11 items-center gap-2 rounded-lg border border-primary/30 px-3 text-sm font-semibold text-foreground hover:bg-primary/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    >
+                        <FaAndroid size={18} aria-hidden="true" />
+                        {t("Get it on Google Play")}
+                    </a>
+                </div>
+            )}
+        </article>
     )
 }

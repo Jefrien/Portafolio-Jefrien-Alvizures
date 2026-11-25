@@ -8,10 +8,6 @@ const stats = [
         title: "Years of experience"
     },
     {
-        number: 10,
-        title: "Projects completed"
-    },
-    {
         number: 9,
         title: "Technologies mastered"
     }    
@@ -19,11 +15,13 @@ const stats = [
 
 export const Stats = () => {
     const { t } = useTranslation();
+    const { projects } = t("projects", { returnObjects: true });
+    const portfolioStats = [stats[0], { number: projects.length, title: "Portfolio projects" }, stats[1]];
   return (
     <section className='pt-4 pb-12 xl:pt-0 xl:pb-24'>
         <div className="container mx-auto px-4 xl:px-8">
             <div className='flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none'>
-                {stats.map((stat, index) => {
+                {portfolioStats.map((stat, index) => {
                     return (
                         <div key={index}
                             className='flex-1 flex gap-4 items-center justify-center xl:justify-start'

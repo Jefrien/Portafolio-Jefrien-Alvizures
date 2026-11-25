@@ -12,49 +12,27 @@ export const ProjectsSection = () => {
     const gridRef = useRef(null);
     const itemsPerPage = 3;
 
-    const [projects, setProjects] = useState([]);
     const [page, setPage] = useState(1);
-    const [totalPages, setTotalPages] = useState(1);
     const [shouldScroll, setShouldScroll] = useState(false);
 
-    // Efecto para manejar la paginación
-    useEffect(() => {
-        if (!projectsList || !Array.isArray(projectsList)) return;
-
-        const start = 0;
-        const end = page * itemsPerPage;
-        const paginatedProjects = projectsList.slice(start, end);
-        setProjects(paginatedProjects);
-    }, [page, projectsList]);
-
-
-    // Efecto para actualizar totalPages cuando cambia projectsList
-    useEffect(() => {
-        if (!projectsList || !Array.isArray(projectsList)) return;
-        const total = Math.ceil(projectsList.length / itemsPerPage);
-        setTotalPages(total);
-    }, [projectsList, itemsPerPage]);
+    const projects = Array.isArray(projectsList) ? projectsList.slice(0, page * itemsPerPage) : [];
+    const totalPages = Math.ceil((projectsList?.length ?? 0) / itemsPerPage);
 
     useEffect(() => {
-        if (shouldScroll && gridRef.current) {
-            // Esperamos a que las animaciones de los nuevos elementos comiencen
-            setTimeout(() => {
-                const scrollTarget = gridRef.current.children[Math.max(0, projects.length - 3)];
-                if (scrollTarget) {
-                    const targetY = scrollTarget.getBoundingClientRect().top + window.scrollY - 100;
-                    window.scrollTo({
-                        top: targetY,
-                        behavior: 'smooth',                        
-                    });
-                    setShouldScroll(false);
-                }
-            }, 700);
-        }
-    }, [projects, shouldScroll]);
+        if (!shouldScroll || !gridRef.current) return;
+
+        const timeout = setTimeout(() => {
+            const firstNewProject = gridRef.current.children[(page - 1) * itemsPerPage];
+            firstNewProject?.scrollIntoView({ behavior: "smooth", block: "start" });
+            setShouldScroll(false);
+        }, 300);
+
+        return () => clearTimeout(timeout);
+    }, [page, shouldScroll]);
 
     return (
         <motion.section 
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             id="projects"
@@ -77,8 +55,9 @@ export const ProjectsSection = () => {
                             // @ts-ignore
                             projects.map((project, index) => (
                                 <motion.div
-                                    key={project.title}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    key={project.slug}
+                                    className="scroll-mt-24"
+                                    initial={index < itemsPerPage ? false : { opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ 
@@ -109,7 +88,7 @@ export const ProjectsSection = () => {
                             setPage(prev => prev + 1);
                             setShouldScroll(true);
                         }}
-                        disabled={page === totalPages}
+                        disabled={page >= totalPages}
                         className="disabled:opacity-50 hover:!bg-white hover:opacity-80 cursor-pointer dark:hover:!bg-transparent"
                         variant="outline"
                     >

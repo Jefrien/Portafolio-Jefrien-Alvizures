@@ -42,16 +42,22 @@ export function ContactForm() {
   })
 
   async function onSubmit(data) {
+    if (isLoading) return;
     setIsLoading(true);
-    await fetch('https://n8n.jefrien.dev/webhook/contact-me', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-    setIsLoading(false);
-    toast(t("Message sent successfully"))
+    try {
+      const response = await fetch('https://n8n.jefrien.dev/webhook/contact-me', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      form.reset();
+      toast.success(t("Message sent successfully"));
+    } catch {
+      toast.error(t("Contact submission failed"));
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (

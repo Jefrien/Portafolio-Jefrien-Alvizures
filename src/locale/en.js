@@ -12,17 +12,21 @@ export default {
         "Hire me": "Hire me",
         "Services": "Services",
         // home
+        "portfolio_intro": "I build real-time apps, automate workflows, and integrate AI to recommend content and answer customer questions.",
+        "Full-Stack Developer and AI Integrator": "Full-Stack Developer and AI Integrator",
+        "View projects": "View projects",
+        "Portfolio projects": "Portfolio projects",
+        "Contact submission failed": "Your message could not be sent. Please try again.",
         "Hello I'm": "Hello I'm",
-        "Full Stack Developer passionate about building smart, scalable, and user-friendly web applications.": "Full Stack Developer passionate about building smart, scalable, and user-friendly web applications.",
-        "Download CV": "Download CV",
+        "Download CV": "Download CV (Spanish)",
         "Load Less": "Load Less",
         "Load More": "Load More",
         // stats
         "Years of experience": "Years of experience",
-        "Projects completed": "Projects completed",
         "Technologies mastered": "Technologies mastered",
 
         // collections
+        "Get it on Google Play": "Get it on Google Play",
         'projects': projects,
         'more_details': 'Details',
         'view_project': 'View project',
@@ -60,7 +64,7 @@ export default {
         'full_stack_service_description': 'Modern and scalable web applications with JavaScript, Node.js, PHP, Laravel, Vue and React. From design to deployment.',
         'admin_systems_service_description': 'Control panels, inventory management, budgets, invoicing, CRM and more, tailored to each business.',
         'api_integration_service_description': 'Integration with external APIs (Deezer, YouTube, OpenAI, WhatsApp, Google, etc). Automation of processes with Node.js, N8N or Zapier.',
-        'ai_implementation_service_description': 'Intelligent systems with GPT, Whisper, OCR, chatbots and natural language analysis applied to real solutions.',
+        'ai_implementation_service_description': 'I integrate AI for specific tasks, such as recommending songs in La Tarima or answering questions and taking orders over WhatsApp for Mi Dulce Tentación GT.',
         'optimization_service_description': 'Improvements in loading speed, accessibility best practices, technical SEO and data structure for positioning.',
         'ecommerce_service_description': 'Online stores in WooCommerce or custom developments, including personalized design and own widgets.',
     }

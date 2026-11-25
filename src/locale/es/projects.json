@@ -1,9 +1,23 @@
 {
   "projects": [
     {
+      "slug": "milocal-gt",
+      "title": "Mi Local GT",
+      "description": "Desarrollé una plataforma web y móvil para que los comercios locales puedan vender en línea. Los clientes pueden descubrir tiendas cercanas, explorar sus catálogos y seguir sus pedidos. Cada comercio tiene un panel para publicar productos, actualizar precios y gestionar los pedidos desde que llegan hasta la entrega.",
+      "image": "projects/milocal",
+      "url": "https://milocalgt.app/",
+      "github": false,
+      "technologies": [
+        "Vue 3",
+        "shadcn-vue",
+        "Tailwind CSS",
+        "Capacitor"
+      ]
+    },
+    {
       "slug": "la-tarima",
       "title": "La Tarima",
-      "description": "Karaoke competitivo para jugar en grupo. Crea una sala, elige canciones por votación o ruleta y compite por la mejor puntuación.",
+      "description": "Creé salas de karaoke competitivo para que un grupo pueda jugar desde sus dispositivos. Implementé la votación y la ruleta para elegir canciones, y sincronicé los turnos y resultados en tiempo real con Laravel Reverb. También implementé un modo con IA que recomienda canciones para la sala.",
       "image": "projects/la-tarima",
       "url": "https://latarima.app/",
       "github": false,
@@ -14,13 +28,16 @@
         "Tailwind CSS",
         "Laravel",
         "Laravel Reverb",
-        "Capacitor"
-      ]
+        "Capacitor",
+        "OpenAI API",
+        "Gemini API"
+      ],
+      "googlePlayUrl": "https://play.google.com/store/apps/details?id=dev.jdevs.latarima&pli=1"
     },
     {
       "slug": "comapa-3d",
       "title": "Comapa 3D",
-      "description": "Sitio web y catálogo de un taller de impresión 3D en Jutiapa, Guatemala. Permite explorar piezas personalizables y solicitar cotizaciones por WhatsApp.",
+      "description": "Construí un catálogo para un taller de impresión 3D en Jutiapa, Guatemala. Incorporé galerías y fichas de producto con enlaces de WhatsApp que permiten pedir una cotización para la pieza elegida.",
       "image": "projects/comapa-3d",
       "url": "https://comapa-3d.vercel.app/",
       "github": false,
@@ -33,7 +50,7 @@
     {
       "slug": "wasapi",
       "title": "Wasapi",
-      "description": "Sistema para la gestión de múltiples instancias de WhatsApp Business, con integración de webhooks y una REST API robusta. Desarrollado con Next.js y Supabase. Ideal para automatización y atención al cliente.",
+      "description": "Desarrollé un panel para administrar varias instancias de WhatsApp Business desde un solo lugar. Integré webhooks y una API REST para conectar flujos de atención y automatización.",
       "image": "projects/wasapi",
       "url": "https://wasapi-kohl.vercel.app/",
       "github": false,
@@ -49,7 +66,7 @@
     {
       "slug": "mi-dulce-tentacion-gt",
       "title": "Mi Dulce Tentación GT",
-      "description": "Sitio web para una pastelería desarrollado con WordPress y WooCommerce, con sistema de pagos contra entrega. Incluye un tema personalizado construido con Tailwind CSS y funciona como REST API para una app Android de gestión y control.",
+      "description": "Sitio web para una pastelería desarrollado con WordPress y WooCommerce, con sistema de pagos contra entrega. Incluye un tema personalizado construido con Tailwind CSS y funciona como REST API para una app Android de gestión y control. También desarrollé un asistente de WhatsApp con la API de OpenAI para responder consultas y tomar pedidos.",
       "image": "projects/mi-dulce-tentacion-gt",
       "url": "https://dulcetentaciongt.com/",
       "github": false,
@@ -58,7 +75,8 @@
         "PHP",
         "MySQL",
         "Tailwind CSS",
-        "WooCommerce"
+        "WooCommerce",
+        "OpenAI API"
       ]
     },
     {
@@ -167,22 +185,6 @@
         "Firebase",
         "Google Auth",
         "CapacitorJS"
-      ]
-    },
-    {
-      "slug": "milocal-gt",
-      "title": "Mi Local GT",
-      "description": "Aplicación estilo Uber diseñada para conectar negocios locales con clientes en su área. Desarrollada con Vue 3, Nuxt.js y Vuetify. Utiliza Firebase como backend, sistema de autenticación y base de datos en tiempo real. Ideal para pequeños comercios que buscan digitalizar sus servicios de entrega o atención personalizada.",
-      "image": "projects/milocal",
-      "url": "https://milocal.jefrien.dev/tienda",
-      "github": false,
-      "technologies": [
-        "Vue 3",
-        "Nuxt.js",
-        "Vuetify",
-        "Firebase",
-        "Google Auth",
-        "Real-time DB"
       ]
     },
     {
